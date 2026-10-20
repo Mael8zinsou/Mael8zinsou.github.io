@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maël Mike Zinsou, Data Engineer et Data Scientist</title>
+<meta name="description" content="Maël Mike Zinsou, diplômé d'un Mastère Data et IA, Data Engineer et Data Scientist. Disponible immédiatement, en France métropolitaine.">
+<meta property="og:title" content="Maël Mike Zinsou, Data Engineer et Data Scientist">
+<meta property="og:description" content="Diplômé d'un Mastère Data et IA, un an à la DGFiP. Disponible immédiatement.">
+<meta property="og:image" content="https://mael8zinsou.github.io/assets/reseau.jpg">
+<link rel="icon" href="assets/photo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1B5FAA; --blue-deep:#0D2C55; --green:#1E8C55; --green-soft:#8FE0B6;
+  --ink:#13243A; --muted:#556476; --line:#DCE5EE; --mist:#F3F7FB; --white:#FFFFFF;
+  --wrap:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:Lato,system-ui,sans-serif;color:var(--ink);background:var(--white);font-size:17px;line-height:1.6}
+a{color:var(--blue);text-underline-offset:3px}
+a:hover{color:var(--green)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* Bandeau réseau, comme sur LinkedIn */
+.band{position:relative;height:320px;background:var(--blue-deep) url(assets/reseau.jpg) center 40%/cover no-repeat}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,20,38,.55),rgba(6,20,38,.05) 45%,rgba(6,20,38,.35))}
+.nav{position:relative;z-index:1;display:flex;justify-content:flex-end;gap:28px;padding-top:22px}
+.nav a{color:#fff;text-decoration:none;font-weight:700;font-size:15px;opacity:.9}
+.nav a:hover{opacity:1;color:var(--green-soft)}
+
+/* Identité */
+.id{position:relative;display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:end;margin-top:-110px}
+.photo{width:220px;height:220px;border-radius:50%;border:6px solid #fff;background:#fff;box-shadow:0 8px 30px rgba(13,44,85,.18)}
+.photo img{width:100%;height:100%;border-radius:50%;display:block}
+.who{padding-bottom:6px}
+.avail{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;font-weight:700;font-size:15px;border-radius:999px;padding:6px 16px 6px 12px}
+.avail::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--green-soft);box-shadow:0 0 0 3px rgba(143,224,182,.35)}
+h1{font-weight:900;font-size:clamp(34px,5vw,52px);line-height:1.05;letter-spacing:-.01em;margin-top:14px;color:var(--blue-deep)}
+.roles{font-size:clamp(20px,2.6vw,27px);font-weight:300;color:var(--blue);margin-top:6px}
+.roles b{font-weight:700;color:var(--green)}
+.intro{max-width:66ch;margin-top:26px;font-size:18.5px;color:var(--muted)}
+.intro strong{color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;text-decoration:none;border-radius:10px;padding:12px 20px;border:2px solid var(--blue)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-deep);border-color:var(--blue-deep);color:#fff}
+.btn.ghost{color:var(--blue);background:#fff}
+.btn.ghost:hover{border-color:var(--green);color:var(--green)}
+
+/* Sections */
+section{padding:84px 0 0}
+h2{font-weight:900;font-size:32px;color:var(--blue-deep);letter-spacing:-.005em}
+h2 + .lead{color:var(--muted);margin-top:6px;max-width:62ch}
+
+/* Projets : une ligne par projet, séparées par un filet */
+.projects{margin-top:34px;border-top:2px solid var(--green)}
+.project{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;padding:34px 0;border-bottom:1px solid var(--line)}
+.project h3{font-size:25px;font-weight:900;color:var(--ink);line-height:1.2}
+.project .sub{color:var(--blue);font-weight:700;margin-top:2px}
+.project .ctx{color:var(--muted);margin-top:12px}
+.project .repo{display:inline-block;margin-top:14px;font-weight:700;font-size:15px}
+.project ul{list-style:none}
+.project li{position:relative;padding-left:22px;margin-bottom:10px}
+.project li::before{content:"";position:absolute;left:2px;top:.68em;width:8px;height:8px;border-radius:50%;background:var(--green)}
+.stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.stack span{font-size:14px;font-weight:700;color:var(--blue);background:var(--mist);border:1px solid var(--line);border-radius:6px;padding:3px 9px}
+.more{margin-top:22px;color:var(--muted)}
+
+/* Parcours : frise, du plus récent au plus ancien */
+.timeline{margin-top:34px;position:relative;padding-left:0}
+.step{display:grid;grid-template-columns:190px 1fr;gap:34px;padding-bottom:30px;position:relative}
+.step::before{content:"";position:absolute;left:205px;top:10px;bottom:-4px;width:2px;background:var(--line)}
+.step:last-child::before{display:none}
+.step::after{content:"";position:absolute;left:199px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
+.step.work::after{border-color:var(--green);background:var(--green)}
+.when{text-align:right;color:var(--muted);font-weight:700;font-size:15px;padding-top:2px}
+.what{padding-left:8px}
+.what h3{font-size:20px;font-weight:900;line-height:1.3}
+.what .org{color:var(--blue);font-weight:700}
+.what .place{color:var(--muted);font-weight:400}
+.what p,.what ul{color:var(--muted);margin-top:6px}
+.what ul{padding-left:18px}
+
+/* Compétences */
+.skills{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 40px}
+.skills h3{font-size:17px;font-weight:900;color:var(--green)}
+.skills p{color:var(--ink);margin-top:4px}
+
+/* Contact */
+.contact{margin-top:96px;background:var(--blue-deep) url(assets/reseau.jpg) center 60%/cover no-repeat;position:relative;color:#fff}
+.contact::before{content:"";position:absolute;inset:0;background:rgba(6,20,38,.78)}
+.contact .wrap{position:relative;padding-top:64px;padding-bottom:64px}
+.contact h2{color:#fff}
+.contact .mail{display:inline-block;font-size:clamp(22px,3.4vw,34px);font-weight:900;color:var(--green-soft);margin-top:14px;word-break:break-all}
+.contact .mail:hover{color:#fff}
+.contact p{margin-top:12px;color:#D6E4F2;max-width:60ch}
+.contact .actions .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.contact .actions .btn.ghost:hover{border-color:var(--green-soft);color:var(--green-soft)}
+footer{background:#06121F;color:#8FA3B8;font-size:14px;padding:18px 0}
+
+@media (max-width:820px){
+  .band{height:220px}
+  .nav{gap:18px;justify-content:center}
+  .id{grid-template-columns:1fr;gap:18px;margin-top:-90px;text-align:left}
+  .photo{width:160px;height:160px}
+  .project{grid-template-columns:1fr;gap:18px}
+  .step{grid-template-columns:1fr;gap:4px;padding-left:28px}
+  .step::before{left:6px}
+  .step::after{left:0}
+  .when{text-align:left}
+  .what{padding-left:0}
+  .skills{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .nav a{font-size:14px}
+  .skills{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <nav class="wrap nav" aria-label="Navigation">
+    <a href="#projets">Projets</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#competences">Compétences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="id">
+      <div class="photo"><img src="assets/photo.png" alt="Portrait de Maël Mike Zinsou"></div>
+      <div class="who">
+        <span class="avail">Disponible immédiatement</span>
+        <h1>Maël Mike Zinsou</h1>
+        <p class="roles"><b>Data Engineer</b> et <b>Data Scientist</b></p>
+      </div>
+    </div>
+
+    <p class="intro">Diplômé d'un Mastère Data &amp; IA, j'ai passé <strong>un an à la DGFiP</strong>, en stage puis en alternance,
+      dans le service qui exploite les données fiscales pour sélectionner les dossiers à contrôler. Je cherche mon
+      premier poste dans la data ou la tech, partout en France métropolitaine.</p>
+
+    <div class="actions">
+      <a class="btn primary" href="assets/CV_Mael_Mike_ZINSOU_FR.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>Télécharger mon CV</a>
+      <a class="btn ghost" href="assets/CV_Mael_Mike_ZINSOU_EN.pdf" download>CV en anglais</a>
+      <a class="btn ghost" href="mailto:maelmike.zinsou@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>M'écrire</a>
+      <a class="btn ghost" href="https://github.com/Mael8zinsou">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/mael-mike-zinsou-data-engineer">LinkedIn</a>
+    </div>
+
+    <section id="projets">
+      <h2>Projets</h2>
+      <p class="lead">Quatre projets publics, chacun avec son code, ses tests et sa documentation sur GitHub.</p>
+
+      <div class="projects">
+        <article class="project">
+          <div>
+            <h3>GameLens</h3>
+            <p class="sub">Plateforme de données temps réel et batch</p>
+            <p class="ctx">Cas d'étude de certification : la plateforme d'un éditeur de jeux vidéo, qui réunit catalogue,
+              nombre de joueurs, audience Twitch et prix pour piloter le marketing et la tarification.</p>
+            <a class="repo" href="https://github.com/Mael8zinsou/gamelens-bloc4_0">Voir le dépôt</a>
+          </div>
+          <div>
+            <ul>
+              <li>API Steam et Twitch ingérées via Kafka dans PostgreSQL, puis couche Gold Snowflake calculée en Snowpark ; exactly-once prouvé par rejeu des offsets</li>
+              <li>29 contrats de données, dont l'échec est vérifié sur un jeu volontairement corrompu</li>
+              <li>CI/CD à 6 étages, supervision Grafana en code avec 6 règles d'alerte</li>
+            </ul>
+            <div class="stack"><span>Python</span><span>Kafka</span><span>Airflow 3</span><span>dbt</span><span>Snowflake</span><span>PostgreSQL</span><span>Docker</span><span>Grafana</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>Mail Track AI</h3>
+            <p class="sub">Classification de mails par LLM</p>
+            <p class="ctx">Le tri automatique des réponses à mes candidatures, construit pour ma propre recherche d'emploi.</p>
+            <a class="repo" href="https://github.com/Mael8zinsou/Mail_track_AI">Voir le dépôt</a>
+          </div>
+          <div>
+            <ul>
+              <li>Chaque jour, les mails Gmail sont classés par un LLM (Gemini) en 6 catégories, avec un résumé, dans un tableau de bord Google Sheets</li>
+              <li>Lots de 15 mails par requête pour tenir dans le quota gratuit de 20 requêtes par jour ; aucun mail traité deux fois</li>
+            </ul>
+            <div class="stack"><span>Python</span><span>Gmail API</span><span>Gemini API</span><span>Google Sheets API</span><span>GitHub Actions</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>TMDB</h3>
+            <p class="sub">Pipeline ELT distribué</p>
+            <p class="ctx">Un catalogue de films prêt pour l'analyse, construit à partir des données de The Movie Database.</p>
+            <a class="repo" href="https://github.com/Mael8zinsou/tmdb-data-pipeline">Voir le dépôt</a>
+          </div>
+          <div>
+            <ul>
+              <li>PySpark vers Snowflake via un stockage compatible S3 : 12 modèles dbt et 51 tests</li>
+              <li>DAG Airflow de 8 tâches, 7 services lancés en une seule commande</li>
+            </ul>
+            <div class="stack"><span>PySpark</span><span>MinIO (S3)</span><span>Snowflake</span><span>dbt</span><span>Airflow</span><span>Docker</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div>
+            <h3>InfoTrafic</h3>
+            <p class="sub">Prédiction du trafic et MLOps, projet d'équipe</p>
+            <p class="ctx">L'état du trafic parisien, de fluide à bloqué, prédit à partir des capteurs Open Data de la Ville de Paris.</p>
+            <a class="repo" href="https://github.com/Mael8zinsou/Info_Trafic">Voir le dépôt</a>
+          </div>
+          <div>
+            <ul>
+              <li>Classification en 4 classes avec scikit-learn : un modèle de référence à 0,99 d'accuracy, et un second à 0,97 qui reste fiable quand un capteur tombe en panne</li>
+              <li>Déploiement blue-green, test en ombre, supervision Prometheus et Grafana, ré-entraînement en CI</li>
+            </ul>
+            <div class="stack"><span>Python</span><span>scikit-learn</span><span>FastAPI</span><span>Docker</span><span>Prometheus</span><span>Grafana</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="more">Aussi sur GitHub : <a href="https://github.com/Mael8zinsou/nba-predictor">NBA Predictor</a>, la mise en production d'une application de machine learning sur Kubernetes, et <a href="https://github.com/Mael8zinsou/veille-emploi-data">ma veille d'offres d'emploi</a>, qui collecte chaque jour 8 sources d'offres data.</p>
+    </section>
+
+    <section id="parcours">
+      <h2>Parcours</h2>
+      <div class="timeline">
+        <div class="step work">
+          <div class="when">sept. 2025 à sept. 2026</div>
+          <div class="what">
+            <h3>Data Engineer en alternance</h3>
+            <p class="org">DGFiP, DIRCOFI Île-de-France <span class="place">Saint-Denis</span></p>
+            <ul>
+              <li>Exploitation et fiabilisation de données fiscales couvertes par le secret, en SQL avancé</li>
+              <li>Refonte de requêtes complexes : temps d'exécution réduit de 30 à 40 %</li>
+              <li>Automatisation, de ma propre initiative, de traitements jusque-là manuels</li>
+            </ul>
+          </div>
+        </div>
+        <div class="step work">
+          <div class="when">juin à août 2025</div>
+          <div class="what">
+            <h3>Data Analyst en stage</h3>
+            <p class="org">DGFiP, DIRCOFI Île-de-France <span class="place">Saint-Denis</span></p>
+            <p>Soutien SQL aux inspecteurs et étude territoriale des contrôles, restituée en tableaux de bord et en cartes (QGIS).</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="when">2025 à 2026</div>
+          <div class="what">
+            <h3>Mastère Data &amp; IA, spécialité Data Engineer</h3>
+            <p class="org">Paris YNOV Campus <span class="place">Nanterre</span></p>
+            <p>RNCP niveau 7 (bac+5), en alternance. Architectures de données distribuées, industrialisation et MLOps.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="when">2023 à 2025</div>
+          <div class="what">
+            <h3>Cycle ingénieur, parcours Big Data</h3>
+            <p class="org">JUNIA ISEN <span class="place">Lille</span></p>
+            <p>Python et R, calcul distribué, apprentissage automatique, pratiques DevOps.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="when">2021 à 2023</div>
+          <div class="what">
+            <h3>Classes préparatoires MPSI</h3>
+            <p class="org">Cycle Préparatoire Sainte Marie-Stella <span class="place">Cotonou, Bénin</span></p>
+            <p>Mathématiques et physique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <div><h3>Langages</h3><p>SQL avancé, Python, Bash, R, C, C++</p></div>
+        <div><h3>Data engineering</h3><p>ETL et ELT, Kafka, Airflow, dbt, PySpark, Snowflake, PostgreSQL, Talend</p></div>
+        <div><h3>Data science et IA</h3><p>scikit-learn, MLflow, FastAPI, API de LLM, développement assisté par IA</p></div>
+        <div><h3>Qualité et industrialisation</h3><p>Contrats de données, pytest, Docker, GitHub Actions, Kubernetes</p></div>
+        <div><h3>Supervision et restitution</h3><p>Prometheus, Grafana, Power BI, QGIS</p></div>
+        <div><h3>Langues</h3><p>Français, langue maternelle. Anglais professionnel (TOEIC B2)</p></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Travaillons ensemble</h2>
+      <a class="mail" href="mailto:maelmike.zinsou@gmail.com">maelmike.zinsou@gmail.com</a>
+      <p>Disponible immédiatement pour un poste en data ou en tech, en CDI comme en CDD, partout en France métropolitaine.</p>
+      <div class="actions">
+        <a class="btn primary" href="assets/CV_Mael_Mike_ZINSOU_FR.pdf" download>Télécharger mon CV</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mael-mike-zinsou-data-engineer">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/Mael8zinsou">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Maël Mike Zinsou, 2026</div></footer>
+</body>
+</html>
