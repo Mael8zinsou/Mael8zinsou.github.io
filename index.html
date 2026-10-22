@@ -163,9 +163,27 @@ footer{background:#06121F;color:#8FA3B8;font-size:14px;padding:18px 0}
 
     <section id="projets">
       <h2>Projets</h2>
-      <p class="lead">Quatre projets publics, chacun avec son code, ses tests et sa documentation sur GitHub.</p>
+      <p class="lead">Cinq projets publics, chacun avec son code, ses tests et sa documentation sur GitHub.</p>
 
       <div class="projects">
+        <article class="project">
+          <div>
+            <h3>RAG fiscal</h3>
+            <p class="sub">Questions-réponses sourcées sur la doctrine fiscale</p>
+            <p class="ctx">Un assistant pour conseillers en gestion de patrimoine : il répond uniquement à partir du BOFiP
+              (949 documents, 12 300 passages), cite ses sources et s'abstient plutôt que d'inventer.</p>
+            <a class="repo" href="https://github.com/Mael8zinsou/rag-fiscal">Voir le dépôt</a>
+          </div>
+          <div>
+            <ul>
+              <li>Recherche hybride dans Qdrant, sens et mots-clés fusionnés, filtres par série et par client, puis reranking</li>
+              <li>Garde-fous : abstention sous un seuil calibré, citations vérifiées après génération, mode dégradé si le LLM échoue</li>
+              <li>Prompts versionnés en A/B, évaluation automatisée en CI, métriques, alertes et traces</li>
+            </ul>
+            <div class="stack"><span>Python</span><span>Qdrant</span><span>sentence-transformers</span><span>Gemini</span><span>FastAPI</span><span>Prometheus</span><span>OpenTelemetry</span></div>
+          </div>
+        </article>
+
         <article class="project">
           <div>
             <h3>GameLens</h3>
@@ -290,7 +308,7 @@ footer{background:#06121F;color:#8FA3B8;font-size:14px;padding:18px 0}
       <div class="skills">
         <div><h3>Langages</h3><p>SQL avancé, Python, Bash, R, C, C++</p></div>
         <div><h3>Data engineering</h3><p>ETL et ELT, Kafka, Airflow, dbt, PySpark, Snowflake, PostgreSQL, Talend</p></div>
-        <div><h3>Data science et IA</h3><p>scikit-learn, MLflow, FastAPI, API de LLM, développement assisté par IA</p></div>
+        <div><h3>Data science et IA</h3><p>RAG, recherche hybride, reranking, Qdrant, API de LLM, scikit-learn, MLflow, développement assisté par IA</p></div>
         <div><h3>Qualité et industrialisation</h3><p>Contrats de données, pytest, Docker, GitHub Actions, Kubernetes</p></div>
         <div><h3>Supervision et restitution</h3><p>Prometheus, Grafana, Power BI, QGIS</p></div>
         <div><h3>Langues</h3><p>Français, langue maternelle. Anglais professionnel (TOEIC B2)</p></div>
